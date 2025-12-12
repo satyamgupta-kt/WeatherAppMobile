@@ -145,7 +145,7 @@ const WeatherDetailsScreen = () => {
               {hourlyData?.map((hour, idx) => (
                 <View key={idx} style={styles.hourCard}>
                   <Text style={styles.hourTime}>{hour.time?.split("T")[1].slice(0, 5)}</Text>
-                  <Image source={hour.weatherCode} style={styles.hourIcon}/>
+                  <Image source={getWeatherIcon(hour.weatherCode)} style={styles.hourIcon}/>
                   <Text style={styles.hourTemp}>{Math.round(convertTemp(hour.temp, temperatureUnit))}°{temperatureUnit}</Text>
                 </View>
               ))}
